@@ -1,3 +1,5 @@
+require './facility'
+
 class Restroom
   attr_reader :queue
   attr_reader :facilities

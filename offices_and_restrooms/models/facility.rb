@@ -1,3 +1,5 @@
+require './person'
+
 class Facility
 
   def initialize

@@ -1,7 +1,7 @@
 class Person
   @@population = []
   attr_reader :use_duration
-  attr_accesor :frequency
+  attr_accessor :frequency
 
 
   def initialize(frequency = 4, use_duration=1)
