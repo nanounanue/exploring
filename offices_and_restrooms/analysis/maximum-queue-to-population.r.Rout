@@ -1,0 +1,51 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener más información y
+'citation()' para saber cómo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+[Previously saved workspace restored]
+
+> library(ggplot2)
+> 
+> data <- read.table("../simulations/sim1/simulation1.csv", header=TRUE, sep=",")
+> 
+> mean <- colMeans(data)
+> 
+> median <- apply(data,2, median)
+> 
+> max <- apply(data, 2, max)
+> 
+> df <- data.frame(population=seq(from=10, to=600, by=10), mean = mean, median=median, max=max)
+> 
+> ggplot(data=df) + 
++ scale_shape_manual(name="Type", values=c(2,3,4)) +
++ geom_smooth(aes(x = population, y = mean)) +
++ geom_point(aes(x = population, y = mean, shape = "mean")) +
++ geom_smooth(aes(x = population, y = median)) +
++ geom_point(aes(x = population, y = median, shape = "median")) +
++ geom_smooth(aes(x = population, y = max)) +
++ geom_point(aes(x = population, y = max, shape = "max")) +
++ scale_y_continuous("queue size", breaks = 0:35) + 
++ scale_x_continuous("population", breaks = seq(from=10, to=600, by=30)) +
++ theme(axis.text.x=element_text(size=7))
+geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+> 
+> 
+> proc.time()
+   user  system elapsed 
+  1.220   0.048   1.253 

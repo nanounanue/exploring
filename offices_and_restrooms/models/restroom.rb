@@ -1,4 +1,4 @@
-require './facility'
+require_relative './facility'
 
 class Restroom
   attr_reader :queue

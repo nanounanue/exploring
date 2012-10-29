@@ -1,3 +1,5 @@
+require_relative './constants'
+
 class Person
   @@population = []
   attr_reader :use_duration

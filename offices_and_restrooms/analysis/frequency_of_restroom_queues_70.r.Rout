@@ -1,0 +1,39 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener más información y
+'citation()' para saber cómo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+[Previously saved workspace restored]
+
+> library(ggplot2)
+> 
+> data <- read.table("../simulations/sim1/simulation1.csv", header=TRUE, sep=",")
+> df <- data.frame(table(data$X70))
+> 
+> colnames(df) <- c("queue_size", "frequency")
+> 
+> percent_labels <- paste(df$frequency, '(', round(df$frequency*100/540, 2), '%)')
+> 
+> ggplot(data=df) + theme(legend.position = "none") +
++ scale_fill_grey(start=0.6, end=0.8) +
++ geom_bar(aes(x=queue_size, y =frequency, fill=factor(queue_size))) +
++ geom_text(aes(x = queue_size, y=frequency, label=percent_labels, size=1)) +
++ scale_y_continuous("frequency") +
++ scale_x_discrete("queue size")
+> 
+> proc.time()
+   user  system elapsed 
+  0.904   0.044   0.944 
