@@ -1,11 +1,11 @@
 Datos generales
-----------------
+==============
 
 
 
 
-* Primera simulación
-
+Primera simulación
+-------------------
 Suposiciones:
 
 - La probabilidad de ir al baño es la misma para cada persona (3 en 9 horas)
@@ -13,7 +13,8 @@ Suposiciones:
 - Todos usan el baño por un sólo tick
 - Hay un solo baño en toda la oficina con todas las facilidades en él.
 
-* Segunda simulación
+Segunda simulación
+---------------------
 
 Suposiciones:
 Mismas que en la primera simulación.
@@ -24,7 +25,8 @@ de facilidades por baño.
 
 
 
-* Tercera simulación
+Tercera simulación
+-------------------
 
 Suposiciones:
 
