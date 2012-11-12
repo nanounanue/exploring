@@ -2,10 +2,10 @@
 require 'csv'
 
 # Importamos los modelos
-require_relative '../../models/constants'
-require_relative '../../models/person'
-require_relative '../../models/facility'
-require_relative '../../models/restroom'
+require_relative '../models/constants'
+require_relative '../models/person'
+require_relative '../models/facility'
+require_relative '../models/restroom'
 
 
 frequency = 3                # Número de veces que una persona en 540 minutos va al baño (en promedio)

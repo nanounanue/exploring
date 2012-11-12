@@ -1,7 +1,7 @@
 library(ggplot2)
 
-data <- read.table("../simulations/simulation1.csv", header=TRUE, sep=",")
-df <- data.frame(table(data$X70))
+data <- read.table("../simulations/simulation2.csv", header=TRUE, sep=",")
+df <- data.frame(table(data$X19))
 
 colnames(df) <- c("queue_size", "frequency")
 

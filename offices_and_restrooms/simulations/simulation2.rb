@@ -2,10 +2,10 @@
 require 'csv'
 
 # Importamos los modelos
-require_relative '../../models/constants'
-require_relative '../../models/person'
-require_relative '../../models/facility'
-require_relative '../../models/restroom'
+require_relative '../models/constants'
+require_relative '../models/person'
+require_relative '../models/facility'
+require_relative '../models/restroom'
 
 frequency = 3
 use_duration = 1
@@ -13,10 +13,10 @@ population_size = 1000
 facilities_per_restroom_range = 1..30
 data = {}
 
-facilities_per_restroom_range do |facilities_per_restroom|
+facilities_per_restroom_range.each do |facilities_per_restroom|
   Person.population.clear
   population_size.times { Person.population << Person.new(frequency, use_duration) }
-  data[facilities_per_restrrom] = []
+  data[facilities_per_restroom] = []
   restroom = Restroom.new facilities_per_restroom
 
   DURATION.times do |t|
